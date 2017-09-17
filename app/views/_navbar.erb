@@ -3,5 +3,5 @@
 <% elsif volunteer_logged_in? %>
   <a href="/volunteers/<% current_volunteer.id %>"><%= current_volunteer.name %></a> <p> | </p> <form class="logout-form" action="/volunteers" method="POST"><input type="hidden" name="_method" value="delete"><input class="logout-button" type="submit" name="logout" value="logout"></form> <p> | </p> <a href="/">home</a>
 <% else %>
-  <a href="/volunteers/new">register</a> <p> | </p> <a id="login" href="/volunteers/login">login</a> <p> | </p> <a href="/">home</a>
+  <a href="/">register</a> <p> | </p> <a id="login" href="/">login</a> <p> | </p> <a href="/">home</a>
 <% end %>

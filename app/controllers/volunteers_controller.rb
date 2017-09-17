@@ -8,6 +8,7 @@ get '/volunteers' do
   @volunteer = Volunteer.new(params[:volunteer])
 
   if @volunteer.save
+    #VERIFY PHONE MESSAGE
     login(@volunteer)
     redirect "/volunteers/#{@volunteer.id}"
   else

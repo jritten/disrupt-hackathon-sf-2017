@@ -8,6 +8,7 @@ post '/parents' do
   @parent = Parent.new(params[:parent])
 
   if @parent.save
+    # VERIFY PHONE MESSAGE
     login(@parent)
     redirect "/parents#{@parent.id}"
   else
