@@ -35,12 +35,12 @@ post '/volunteers' do
 end
 
 # verification form
-get '/verify' do 
+get '/verify' do
   erb :'verify'
 end
 
 # verify code
-post '/verify' do 
+post '/verify' do
   response = nexmo.check_verification(
     session[:verification_id],
     code: params[:code])
@@ -57,4 +57,3 @@ post '/verify' do
     redirect '/login'
   end
 end
-

@@ -18,10 +18,9 @@ end
 # parent profile
 get '/parents/:id' do
   @parent = Parent.find(params[:id])
-  # @kids = @parent.kids
+  @kids = @parent.kids
   # @gigs = @kids.gigs
   # @volunteers = @gigs.volunteers
-
   erb :'parents/show'
 end
 
