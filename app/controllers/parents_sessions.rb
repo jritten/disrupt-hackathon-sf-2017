@@ -15,6 +15,16 @@ post '/parents/login' do
   end
 end
 
+# parent profile
+get '/parents/:id' do
+  @parent = Parent.find(params[:id])
+  # @kids = @parent.kids
+  # @gigs = @kids.gigs
+  # @volunteers = @gigs.volunteers
+
+  erb :'parents/show'
+end
+
 # logout volunteer
 delete '/parents/logout' do
   logout_parent

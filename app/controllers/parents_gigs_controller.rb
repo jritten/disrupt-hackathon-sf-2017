@@ -26,3 +26,13 @@ post '/parents/:id/gigs' do
     erb :'parents/:id/gigs/new'
   end
 end
+
+get '/parents/:id/volunteers/:volunteer_id/gigs/index' do 
+  @parent = Parent.find(params[:id])
+  # @gig = @parent.Gig.new(params[:gig])
+  # @volunteer = @gig.volunteer
+
+  erb :'gigs/index'
+end
+
+
