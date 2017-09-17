@@ -1,6 +1,7 @@
 class CreateVolunteersTable < ActiveRecord::Migration[5.1]
   def change
     create_table :volunteers do |t|
+      t.string :username
       t.string :name
       t.integer :age
       t.string :phone

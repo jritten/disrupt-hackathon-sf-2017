@@ -59,11 +59,11 @@ post '/verify' do
 end
 
 # volunteer profile
-# get '/volunteers/:id' do
-#   @volunteer = Volunteer.find(params[:id])
-#   @gigs = @volunteer.gigs
-#   @kids = @gigs.parents
-#   @parents = @kids.parents
-#
-#   erb :'volunteers/show'
-# end
+get '/volunteers/:id' do
+  @volunteer = Volunteer.find(params[:id])
+  @gigs = @volunteer.gigs
+  @kids = @gigs.parents
+  @parents = @kids.parents
+
+  erb :'volunteers/show'
+end
