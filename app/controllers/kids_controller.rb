@@ -8,8 +8,6 @@ end
 # new kid form
 get '/parents/:id/kids/new' do 
   @parent = Parent.find(params[:id])
-  @kid = @parent.Kid.new
-
   erb :'kids/new'
 end
 
