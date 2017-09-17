@@ -227,3 +227,72 @@ body {
   max-width: 900px;
   margin: 0 auto;
 }
+
+.video-tempo {
+  height: 600px;
+  color: #fff;
+  border: solid 2px #111;
+  background-color: #111;
+
+}
+
+.chat-tempo {
+  padding: 0px;
+  position: relative;
+}
+
+.messages {
+  height: 73.5%;
+  overflow-y: scroll;
+}
+
+.card-text {
+  color: #666;
+}
+
+.card-title{
+  font-weight: bold;
+}
+
+.message {
+  border: solid 1px #eee;
+  border-radius: 5px;
+  padding: 20px 25px 7px;
+  margin-bottom: 0.4rem;
+  box-shadow: 0 6px 5px -6px #777;
+  background-color: #fff;
+}
+
+/*.message:last-of-type {
+  margin-bottom: 2rem;
+}*/
+
+#chat {
+  width: 100%;
+  border: solid 1px #eee;
+  border-radius: 5px;
+  box-shadow: 0 6px 5px -6px #777;
+  background-color: #fff;
+  position: absolute;
+  bottom: 0px;
+  left: auto;
+  right: auto;
+}
+
+.sent-time {
+  display: inline-block;
+  margin-left: 10px;
+  color: #bbb;
+  right: 5px;
+  font-size: 14px;
+}
+
+.btn-chat {
+  width: 80px;
+  text-align: center;
+  opacity: 0.5;
+}
+
+.btn-chat:hover {
+  opacity: 1.0;
+}

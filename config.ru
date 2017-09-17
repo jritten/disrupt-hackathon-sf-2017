@@ -6,4 +6,8 @@ get '/' do
   erb :home
 end
 
+get '/video_page' do
+  erb :video_page
+end
+
 run Sinatra::Application
