@@ -31,12 +31,12 @@ post '/parents' do
 end
 
 # verification form
-get '/verify' do 
+get '/verify' do
   erb :'verify'
 end
 
 # verify code
-post '/verify' do 
+post '/verify' do
   response = nexmo.check_verification(
     session[:verification_id],
     code: params[:code])
@@ -53,13 +53,3 @@ post '/verify' do
     redirect '/login'
   end
 end
-
-# # parent profile
-# get '/parents/:id' do
-#   @parent = Parent.find(params[:id])
-#   @kids = @parent.kids
-#   @gigs = @kids.gigs
-#   @volunteers = @gigs.volunteers
-#
-#   erb :'parents/show'
-# end

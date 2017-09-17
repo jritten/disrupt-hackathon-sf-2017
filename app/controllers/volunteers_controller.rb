@@ -13,12 +13,16 @@ end
 post '/volunteers' do
   @volunteer = Volunteer.new(params[:volunteer])
 
-  @response = nexmo.start_verification(
+  p params
+
+  response = nexmo.start_verification(
     number: params['volunteer']['phone'],
     brand: 'MyApp')
   # start_volunteer_verifications
 
-  if @volunteer.save && response['status'] == '0' 
+  p response
+
+  if @volunteer.save && response['status'] == '0'
   # if @volunteer.save && verify_response?
     session[:verification_id] = response['request_id']
     # verify_user
@@ -31,12 +35,12 @@ post '/volunteers' do
 end
 
 # verification form
-get '/verify' do 
+get '/verify' do
   erb :'verify'
 end
 
 # verify code
-post '/verify' do 
+post '/verify' do
   response = nexmo.check_verification(
     session[:verification_id],
     code: params[:code])
@@ -53,13 +57,3 @@ post '/verify' do
     redirect '/login'
   end
 end
-
-# volunteer profile
-# get '/volunteers/:id' do
-#   @volunteer = Volunteer.find(params[:id])
-#   @gigs = @volunteer.gigs
-#   @kids = @gigs.parents
-#   @parents = @kids.parents
-#
-#   erb :'volunteers/show'
-# end

@@ -24,11 +24,7 @@
   <%= erb :'_errors' %>
   <div class="site-wrapper">
     <div class="site-wrapper-inner">
-      <nav class="clearfix mar-b-1">
-        <ul class="no-bullets no-margin no-padding right">
-          <li class="pipe-separete left"><%= erb :'_navbar' %></li>
-        </ul>
-      </nav>
+      <%= erb :'_navbar' %>
       <%= yield %>
     </div>
   </div>

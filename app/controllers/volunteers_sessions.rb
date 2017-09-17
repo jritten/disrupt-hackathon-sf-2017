@@ -4,7 +4,7 @@ get '/volunteers/login' do
 end
 
 # login volunteer
-post '/volunteers' do
+post '/volunteers/login' do
   @volunteer = Volunteer.find_by(email: params[:email])
 
   if @volunteer && @volunteer.authenticate(params[:password])
@@ -16,8 +16,18 @@ post '/volunteers' do
   end
 end
 
+# volunteer profile
+get '/volunteers/:id' do
+  @volunteer = Volunteer.find(params[:id])
+  # @gigs = @volunteer.gigs
+  # @kids = @gigs.parents
+  # @parents = @kids.parents
+
+  erb :'volunteers/show'
+end
+
 # logout volunteer
-delete '/volunteers' do
+delete '/volunteers/logout' do
   logout_volunteer
   redirect '/'
 end
