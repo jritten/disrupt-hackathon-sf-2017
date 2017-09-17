@@ -30,4 +30,3 @@ class Volunteer < ActiveRecord::Base
     end
   end
 end
-end

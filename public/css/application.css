@@ -154,7 +154,7 @@ body {
   .masthead,
   .mastfoot,
   .cover-container {
-    width: 42rem;
+    width: 95%;
   }
 }
 
@@ -203,10 +203,7 @@ body {
 .form-wrapper {
   margin: 0 20px;
   padding: 20px 50px 10px;
-}
-
-.form-wrapper > .card {
-  border: solid 2px #f8f8f8;
+  border-radius: .5rem;
 }
 
 .form-btn {
@@ -218,4 +215,15 @@ body {
 
 .form-btn:hover {
   border-color: #444;
+}
+
+.logout {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.login-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
 }

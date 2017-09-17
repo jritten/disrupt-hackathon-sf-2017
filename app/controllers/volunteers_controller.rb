@@ -4,7 +4,7 @@ get '/volunteers/new' do
 end
 
 # register new volunteer
-get '/volunteers' do
+post '/volunteers' do
   @volunteer = Volunteer.new(params[:volunteer])
 
   if @volunteer.save

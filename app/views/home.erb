@@ -1,19 +1,24 @@
         <div class="cover-container">
           <div class="inner cover">
             <h1 class="cover-heading">Catch Copy</h1>
+
             <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
-            <div class="home-select-btns">
-              <a href="#" class="btn btn-lg btn-secondary home-btn parent">Parent</a>
-              <a href="#" class="btn btn-lg btn-secondary home-btn volunteer">Volunteer</a>
-            </div>
-            <div class="parent-select-btns">
-              <a href="/parents/new" class="btn btn-lg btn-secondary home-btn sign-up">Sign up</a>
-              <a href="/parents/login" class="btn btn-lg btn-secondary home-btn sign-in">Log in</a>
-            </div>
-            <div class="volunteer-select-btns">
-              <a href="/parents/new" class="btn btn-lg btn-secondary home-btn sign-up">Sign up</a>
-              <a href="/volunteers/login" class="btn btn-lg btn-secondary home-btn sign-in">Log in</a>
-            </div>
+            <% if !(parent_logged_in? || volunteer_logged_in?) %>
+              <div class="home-select-btns">
+                <a href="#" class="btn btn-lg btn-secondary home-btn parent">Parent</a>
+                <a href="#" class="btn btn-lg btn-secondary home-btn volunteer">Volunteer</a>
+              </div>
+
+              <div class="parent-select-btns">
+                <a href="/parents/new" class="btn btn-lg btn-secondary home-btn sign-up">Sign up</a>
+                <a href="/parents/login" class="btn btn-lg btn-secondary home-btn sign-in">Log in</a>
+              </div>
+
+              <div class="volunteer-select-btns">
+                <a href="/volunteers/new" class="btn btn-lg btn-secondary home-btn sign-up">Sign up</a>
+                <a href="/volunteers/login" class="btn btn-lg btn-secondary home-btn sign-in">Log in</a>
+              </div>
+            <% end %>
           </div>
 
           <div class="mastfoot">
