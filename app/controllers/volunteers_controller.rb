@@ -21,8 +21,8 @@ post '/volunteers' do
   # start_volunteer_verifications
 
   p response
-
-  if @volunteer.save && response['status'] == '0'
+  
+  if @volunteer.save && response['status'] == '0' 
   # if @volunteer.save && verify_response?
     session[:verification_id] = response['request_id']
     # verify_user

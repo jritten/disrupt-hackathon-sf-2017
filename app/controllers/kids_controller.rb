@@ -6,13 +6,13 @@ get '/parents/:id/kids' do
 end
 
 # new kid form
-get '/parents/:id/kids/new' do
+get '/parents/:id/kids/new' do 
   @parent = Parent.find(params[:id])
   erb :'kids/new'
 end
 
 # create new kid
-post '/parents/:id/kids' do
+post '/parents/:id/kids' do 
   @parent = Parent.find(params[:id])
   @kid = @parent.Kid.new(params[:kid])
 
