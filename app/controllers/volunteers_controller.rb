@@ -13,11 +13,15 @@ end
 post '/volunteers' do
   @volunteer = Volunteer.new(params[:volunteer])
 
-  @response = nexmo.start_verification(
+  p params
+
+  response = nexmo.start_verification(
     number: params['volunteer']['phone'],
     brand: 'MyApp')
   # start_volunteer_verifications
 
+  p response
+  
   if @volunteer.save && response['status'] == '0' 
   # if @volunteer.save && verify_response?
     session[:verification_id] = response['request_id']

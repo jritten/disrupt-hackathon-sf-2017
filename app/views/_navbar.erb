@@ -5,11 +5,11 @@
       <% if parent_logged_in? %>
         <a class="nav-link" href="/">Home</a>
         <a class="nav-link" href="/parents/<% current_parent.id %>"><%= current_parent.name %></a>
-        <form class="nav-link" action="/parents" method="POST"><input type="hidden" name="_method" value="delete"><button type="submit" name="logout" value="logout" class="logout">Logout</button></form>
+        <form class="nav-link" action="/parents/logout" method="POST"><input type="hidden" name="_method" value="delete"><button type="submit" name="logout" value="logout" class="logout">Logout</button></form>
       <% elsif volunteer_logged_in? %>
         <a class="nav-link" href="/">Home</a>
         <a class="nav-link" href="/volunteers/<% current_volunteer.id %>"><%= current_volunteer.name %></a>
-        <form class="nav-link" action="/volunteers" method="POST"><input type="hidden" name="_method" value="delete"><button type="submit" name="logout" value="logout" class="logout">Logout</button></form>
+        <form class="nav-link" action="/volunteers/logout" method="POST"><input type="hidden" name="_method" value="delete"><button type="submit" name="logout" value="logout" class="logout">Logout</button></form>
       <% else %>
         <a class="nav-link active" href="/">Home</a>
       <% end %>
