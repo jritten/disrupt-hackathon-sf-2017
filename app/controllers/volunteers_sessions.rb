@@ -4,7 +4,7 @@ get '/volunteers/login' do
 end
 
 # login volunteer
-post '/volunteers' do
+post '/volunteers/login' do
   @volunteer = Volunteer.find_by(email: params[:email])
 
   if @volunteer && @volunteer.authenticate(params[:password])
@@ -17,7 +17,7 @@ post '/volunteers' do
 end
 
 # logout volunteer
-delete '/volunteers' do
+delete '/volunteers/logout' do
   logout_volunteer
   redirect '/'
 end

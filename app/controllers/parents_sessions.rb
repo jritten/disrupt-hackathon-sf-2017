@@ -4,7 +4,7 @@ get '/parents/login' do
 end
 
 # login volunteer
-post '/parents' do
+post '/parents/login' do
   @parent = Parent.find_by(email: params[:email])
   if @parent && @parent.authenticate(params[:password])
     login_parent(@parent)
@@ -16,7 +16,7 @@ post '/parents' do
 end
 
 # logout volunteer
-delete '/parents' do
+delete '/parents/logout' do
   logout_parent
   redirect '/'
 end
