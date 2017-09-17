@@ -18,6 +18,12 @@
   <title></title>
 </head>
 <body>
+  <nav>
+    <ul>
+      <li><%= erb :'_navbar' %></li>
+    </ul>
+  </nav>
+  <%= erb :'_errors' %>
   <%= yield %>
 </body>
 </html>
