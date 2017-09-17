@@ -9,9 +9,11 @@ gem 'sinatra-contrib'
 
 gem 'activesupport', '~>5.1.2'
 gem 'activerecord', '~>5.1.2'
+gem 'dotenv'
 
 gem 'rake'
 gem 'bcrypt'
+gem 'opentok'
 
 gem 'shotgun', '~>0.9.1'
 

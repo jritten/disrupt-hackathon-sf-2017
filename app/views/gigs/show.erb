@@ -1,0 +1,54 @@
+<head>
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <script src="http://static.opentok.com/webrtc/v2.0/js/TB.min.js" type="text/javascript" charset="utf-8"></script>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+  <script type="text/javascript" charset="utf-8">
+
+// Handling all of our errors here by alerting them
+function handleError(error) {
+  if (error) {
+    alert(error.message);
+  }
+}
+
+// (optional) add server code here
+initializeSession();
+
+function initializeSession() {
+  var session = OT.initSession(<%=ENV['APIKEY'] %>, <%= ENV['PTSESSIONID']%>);
+
+  // Subscribe to a newly created stream
+  session.on('streamCreated', function(event) {
+    session.subscribe(event.stream, 'subscriber', {
+      insertMode: 'append',
+      width: '100%',
+      height: '100%'
+    }, handleError);
+  });
+
+  // Create a publisher
+  var publisher = OT.initPublisher('publisher', {
+    insertMode: 'append',
+    width: '100%',
+    height: '100%'
+  }, handleError);
+
+  // Connect to the session
+  session.connect(<%= ENV['PARENTTOKEN']%> , function(error) {
+    // If the connection is successful, initialize a publisher and publish to the session
+    if (error) {
+      handleError(error);
+    } else {
+      session.publish(publisher, handleError);
+    }
+  });
+}
+    </script>
+
+</head>
+    <body>
+      <h1 style= "text-align: center">Here's the chatroom!</h1>
+      Share this chatroom!
+      <input style= "width: 150px;"  id= "link" type= "text" readonly= "readonly" value= "" />
+    </body>
