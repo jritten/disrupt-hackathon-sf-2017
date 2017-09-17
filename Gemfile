@@ -6,6 +6,7 @@ gem 'pg'
 # Sinatra driver
 gem 'sinatra', '~> 1.0'
 gem 'sinatra-contrib'
+gem 'bootstrap', '~> 4.0.0.beta'
 
 gem 'activesupport', '~>5.1.2'
 gem 'activerecord', '~>5.1.2'
