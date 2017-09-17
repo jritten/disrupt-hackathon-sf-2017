@@ -1,6 +1,6 @@
 class Parent < ActiveRecord::Base
   has_many :kids
-  has_many :gigs { through: :kids }
+  has_many :gigs, { through: :kids }
 
   include BCrypt
 
@@ -27,5 +27,5 @@ class Parent < ActiveRecord::Base
     if self.password == ""
       errors.add(:password, 'can\'t be empty')
     end
-  end 
+  end
 end

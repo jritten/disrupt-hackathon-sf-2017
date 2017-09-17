@@ -1,5 +1,5 @@
 # volunteers login form
-get '/parents/login'
+get '/parents/login' do
   erb :'parents/login'
 end
 
@@ -17,7 +17,7 @@ post '/parents' do
 end
 
 # logout volunteer
-delete '/parents' do 
+delete '/parents' do
   logout_parent
   redirect '/'
 end

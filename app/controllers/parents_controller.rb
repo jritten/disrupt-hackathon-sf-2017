@@ -1,27 +1,28 @@
 # parents registration form
-get '/parents/new' do 
+get '/parents/new' do
   erb :'parents/new'
 end
 
 # register new parent
-post '/parents' do 
+post '/parents' do
   @parent = Parent.new(params[:parent])
 
   if @parent.save
-    login(@parent)
-    redirect "/parents#{@parent.id}"
+    login_parent(@parent)
+    # redirect "/parents#{@parent.id}"
+    redirect "/"
   else
-    @errors = errors.full_messages
+    ["Please try again"]
     erb :'parents/new'
   end
 end
 
-# parent profile
-get '/parents/:id' do 
-  @parent = Parent.find(params[:id])
-  @kids = @parent.kids
-  @gigs = @kids.gigs
-  @volunteers = @gigs.volunteers
-
-  erb :'parents/show'
-end
+# # parent profile
+# get '/parents/:id' do
+#   @parent = Parent.find(params[:id])
+#   @kids = @parent.kids
+#   @gigs = @kids.gigs
+#   @volunteers = @gigs.volunteers
+#
+#   erb :'parents/show'
+# end
