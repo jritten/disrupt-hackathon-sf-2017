@@ -124,9 +124,15 @@
                   <td>quis</td>
                   <td>sem</td>
                   <td>at</td>
-                </tr>    
+                </tr>
               </tbody>
             </table>
           </div>
         </main>
       </div>
+
+    <% if @kids %>
+      <% @kids.each do |kid| %>
+        <p><%= kid.name %></p>
+      <% end %>
+    <% end %>
