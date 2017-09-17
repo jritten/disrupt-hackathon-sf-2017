@@ -1,4 +1,10 @@
 class Parent < ActiveRecord::Base
+  validates :name, { presence:true }
+  validates :username, { presence: true }
+  validates :phone, { presence: true, uniqueness: true }
+  validates :email, { presence:true, uniqueness: true }
+  validate :has_password
+
   has_many :kids
   has_many :gigs, { through: :kids }
 
