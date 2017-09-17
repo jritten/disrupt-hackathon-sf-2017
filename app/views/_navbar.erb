@@ -1,0 +1,7 @@
+<% if logged_in? %>
+  <a href="/users/<% current_user.id %>"><%= current_user.username %></a> <p> | </p> <form class="logout-form" action="/sessions" method="POST"><input type="hidden" name="_method" value="delete"><input class="logout-button" type="submit" name="logout" value="logout"></form> <p> | </p> <a href="/">home</a>
+<% else %>
+  <a href="/users/new">register</a> <p> | </p> <a id="login" href="/sessions/new">login</a> <p> | </p> <a href="/">home</a>
+<% end %>
+
+# we will need an 'if parent_logged_in?' and 'if volunteer_logged_in?'
