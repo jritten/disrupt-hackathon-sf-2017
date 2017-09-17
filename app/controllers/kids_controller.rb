@@ -19,7 +19,7 @@ post '/parents/:id/kids' do
   @kid = @parent.Kid.new(params[:kid])
 
   if @kid.save
-    erb :'parents/:id' do 
+    erb :'parents/:id'
   else
     @errors = @kid.errors.full_messages
     erb :'parents/:id/kids/new'
