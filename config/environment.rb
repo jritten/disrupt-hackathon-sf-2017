@@ -22,6 +22,18 @@ require "sinatra/reloader" if development?
 require 'erb'
 require 'pry-byebug'
 
+# load environment variables
+# from .env file
+# require 'dotenv'
+# Dotenv.load
+
+# nexmo library
+# require 'nexmo'
+# nexmo = Nexmo::Client.new(
+#   key: ENV['0b5dd1d6'],
+#   secret: ENV['NEXMO_API_SECRET']
+# )
+
 # Some helper constants for path-centric logic
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
 
