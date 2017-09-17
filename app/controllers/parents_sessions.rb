@@ -6,7 +6,6 @@ end
 # login volunteer
 post '/parents' do
   @parent = Parent.find_by(email: params[:email])
-
   if @parent && @parent.authenticate(params[:password])
     login_parent(@parent)
     redirect '/'

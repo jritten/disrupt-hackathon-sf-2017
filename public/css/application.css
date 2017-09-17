@@ -105,6 +105,8 @@ body {
  */
 
 .cover {
+  max-width: 600px;
+  margin: 0 auto;
   padding: 0 1.5rem;
   color: white;
   text-align: center;
@@ -179,15 +181,21 @@ body {
 }
 
 .parent-select-btns > .home-btn {
- opacity: 9.0;
+  opacity: 0.8;
+ border: solid 2px white;
+ color: white;
+ background: none;
 }
 
  .volunteer-select-btns > .home-btn {
-  opacity: 9.0;
+   opacity: 0.8;
+   border: solid 2px white;
+   color: white;
+   background: none;
 }
 
 .parent-select-btns > .home-btn:hover {
-  opacity: 9.0;
+  opacity: 1.0;
   font-size: 24px;
   margin: 5px 5px;
   padding: 10.5px 12px;
@@ -261,6 +269,11 @@ body {
   margin-bottom: 0.4rem;
   box-shadow: 0 6px 5px -6px #777;
   background-color: #fff;
+}
+
+.back-home {
+  margin: 0 auto;
+  font-size: 20px;
 }
 
 /*.message:last-of-type {
