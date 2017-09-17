@@ -8,11 +8,12 @@ get '/volunteers' do
   @volunteer = Volunteer.new(params[:volunteer])
 
   if @volunteer.save
+    #VERIFY PHONE MESSAGE
     login_volunteer(@volunteer)
     # redirect "/volunteers/#{@volunteer.id}"
     redirect "/"
   else
-    @errors = @volunteer.errors.full_messages
+    @errors = ["PLEASE TRY AGAIN"]
     erb :'volunteers/new'
   end
 end

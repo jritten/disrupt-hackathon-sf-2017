@@ -8,11 +8,12 @@ post '/parents' do
   @parent = Parent.new(params[:parent])
 
   if @parent.save
+    # VERIFY PHONE MESSAGE
     login_parent(@parent)
     # redirect "/parents#{@parent.id}"
     redirect "/"
   else
-    ["Please try again"]
+    ["PLEASE TRY AGAIN"]
     erb :'parents/new'
   end
 end
