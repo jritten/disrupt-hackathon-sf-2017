@@ -1,8 +1,7 @@
 
-
 a,
-a:focus,
-a:hover {
+  a:focus,
+  a:hover {
   color: #fff;
 }
 

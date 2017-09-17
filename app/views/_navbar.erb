@@ -1,7 +1,5 @@
-<% if parent_logged_in? %>
-  <a href="/parents/<% current_parent.id %>"><%= current_parent.name %></a> <p> | </p> <form class="logout-form" action="/parents" method="POST"><input type="hidden" name="_method" value="delete"><input class="logout-button" type="submit" name="logout" value="logout"></form> <p> | </p> <a href="/">home</a>
-<% elsif volunteer_logged_in? %>
-  <a href="/volunteers/<% current_volunteer.id %>"><%= current_volunteer.name %></a> <p> | </p> <form class="logout-form" action="/volunteers" method="POST"><input type="hidden" name="_method" value="delete"><input class="logout-button" type="submit" name="logout" value="logout"></form> <p> | </p> <a href="/">home</a>
+<% if logged_in? %>
+  <a href="/users/<% current_user.id %>"><%= current_user.username %></a> <p> | </p> <form class="logout-form" action="/sessions" method="POST"><input type="hidden" name="_method" value="delete"><input class="logout-button" type="submit" name="logout" value="logout"></form> <p> | </p> <a href="/">home</a>
 <% else %>
-  <a href="/volunteers/new">register</a> <p> | </p> <a id="login" href="/volunteers/login">login</a> <p> | </p> <a href="/">home</a>
+  <a href="/users/new">register</a> <p> | </p> <a id="login" href="/sessions/new">login</a> <p> | </p> <a href="/">home</a>
 <% end %>

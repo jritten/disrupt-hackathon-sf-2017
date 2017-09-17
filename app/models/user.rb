@@ -1,6 +1,8 @@
-class Parent < ActiveRecord::Base
-  has_many :kids
-  has_many :gigs { through: :kids }
+class User < ActiveRecord::Base
+
+  validates :email, {presence: true, uniqueness: true}
+  validates :username, {presence: true, uniqueness: true}
+  validate :has_password
 
   include BCrypt
 
@@ -27,5 +29,6 @@ class Parent < ActiveRecord::Base
     if self.password == ""
       errors.add(:password, 'can\'t be empty')
     end
-  end 
+  end
+end
 end

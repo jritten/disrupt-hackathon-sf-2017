@@ -1,35 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!--
-    normalize.css removes cross-browser differences in defaults, e.g.,
-    differences in how form elements appear between Firefox and IE
-    See: http://necolas.github.com/normalize.css/
-  -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
   <link rel="stylesheet" href="/css/normalize.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-  <!--
-    application.css is where you put your styles
-  -->
   <link rel="stylesheet" href="/css/application.css">
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="/js/jquery.js"></script>
   <script src="/js/application.js"></script>
 
   <title></title>
 </head>
 <body>
-  <nav>
-    <ul>
-      <li><%= erb :'_navbar' %></li>
-    </ul>
-  </nav>
-  <%= erb :'_errors' %>
-  <%= yield %>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+  <header role="banner" class="mar-t-5 pad-t-2 pad-b-4 pad-s-1 wrap-float bg-white">
+    <div class="max-w-700 center wrap-float">
+      <nav class="clearfix mar-b-1">
+        <ul class="no-bullets no-margin no-padding right">
+          <li id="navbar" class="pipe-separate t-light-green left"><%= erb :'_navbar' %></li>
+        </ul>
+      </nav>
+
+      <div class="logo-container">
+        <img class="logo" class="center block">
+        <h1></h1>
+      </div>
+    </div>
+  </header>
+
+  <div class="bg-dk-green pad-t-2 pad-s-1 pad-b-8 mar-b-16 c-white">
+    <div class="max-w-700 center">
+      <%= erb :'_errors' %>
+      <%= yield %>
+    </div>
+  </div>
 </body>
 </html>
