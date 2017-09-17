@@ -14,4 +14,8 @@ helpers do
   def logout
     session[:user_id] = nil
   end
+
+  def access_allowed?(restaurant)
+    logged_in? && current_user.id == restaurant.user_id
+  end
 end

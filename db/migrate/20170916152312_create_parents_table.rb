@@ -4,6 +4,8 @@ class CreateParentsTable < ActiveRecord::Migration[5.1]
       t.string :name
       t.string :phone
       t.string :location
+      t.string :email
+      t.string :password_hash
       
       t.timestamps
     end
