@@ -1,10 +1,10 @@
 # volunteers login form
-get '/volunteers/login'
+get '/volunteers/login' do
   erb :'volunteers/login'
 end
 
 # login volunteer
-post '/volunteers' do 
+post '/volunteers' do
   @volunteer = Volunteer.find_by(email: params[:email])
 
   if @volunteer && @volunteer.authenticate(params[:password])
@@ -17,7 +17,7 @@ post '/volunteers' do
 end
 
 # logout volunteer
-delete '/volunteers' do 
+delete '/volunteers' do
   logout_volunteer
   redirect '/'
 end

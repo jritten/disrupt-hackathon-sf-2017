@@ -1,7 +1,33 @@
+<div class="masthead clearfix">
+  <div class="inner">
+    <h3 class="masthead-brand">Title</h3>
+    <nav class="nav nav-masthead">
+      <% if parent_logged_in? %>
+        <a class="nav-link" href="/">home</a>
+        <a class="nav-link" href="/parents/<% current_parent.id %>"><%= current_parent.name %></a>
+        <form class="nav-link" action="/parents" method="POST"><input type="hidden" name="_method" value="delete"><input class="logout-button" type="submit" name="logout" value="logout"></form>
+      <% elsif volunteer_logged_in? %>
+        <a class="nav-link" href="/">home</a>
+        <a class="nav-link" href="/volunteers/<% current_volunteer.id %>"><%= current_volunteer.name %></a>
+        <form class="nav-link" action="/volunteers" method="POST"><input type="hidden" name="_method" value="delete"><input class="logout-button" type="submit" name="logout" value="logout"></form>
+      <% else %>
+        <a class="nav-link active" href="/">home</a>
+        <a class="nav-link" id="login" href="/">login</a>
+        <a class="nav-link" href="/">register</a>
+      <% end %>
+    </nav>
+  </div>
+</div>
+
+<!--
 <% if parent_logged_in? %>
-  <a href="/parents/<% current_parent.id %>"><%= current_parent.name %></a> <p> | </p> <form class="logout-form" action="/parents" method="POST"><input type="hidden" name="_method" value="delete"><input class="logout-button" type="submit" name="logout" value="logout"></form> <p> | </p> <a href="/">home</a>
+  <a href="/parents/<% current_parent.id %>"><%= current_parent.name %></a> <p> | </p>
+  <form class="logout-form" action="/parents" method="POST"><input type="hidden" name="_method" value="delete"><input class="logout-button" type="submit" name="logout" value="logout"></form>
+  <a href="/">home</a>
 <% elsif volunteer_logged_in? %>
+
   <a href="/volunteers/<% current_volunteer.id %>"><%= current_volunteer.name %></a> <p> | </p> <form class="logout-form" action="/volunteers" method="POST"><input type="hidden" name="_method" value="delete"><input class="logout-button" type="submit" name="logout" value="logout"></form> <p> | </p> <a href="/">home</a>
 <% else %>
-  <a href="/volunteers/new">register</a> <p> | </p> <a id="login" href="/volunteers/login">login</a> <p> | </p> <a href="/">home</a>
-<% end %>
+
+  <a href="/">register</a> <p> | </p> <a id="login" href="/">login</a> <p> | </p> <a href="/">home</a>
+<% end %> -->
